@@ -58,7 +58,6 @@ namespace EngineSimulator.Models
 
 
         public event Action OnTemperatureChanged;
-        public bool IsRunning => isRunning;
         public float Tengine
         {
             get => _Tengine;
@@ -96,7 +95,7 @@ namespace EngineSimulator.Models
 
             float v = 0;
             float m = M[0];
-            while (IsRunning)
+            while (isRunning)
             {
                 elapsedTime += tao;
                 var a = m / I;

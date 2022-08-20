@@ -4,7 +4,6 @@
     {
         event Action OnTemperatureChanged;
         float Tengine { get; set; }
-        bool IsRunning { get; }
         float Tmax { get; }
         float Runtime { get; }
         void Start(float Tarea);
