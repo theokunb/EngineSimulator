@@ -9,21 +9,18 @@ namespace EngineSimulator.Models
             this.engine = engine;
         }
 
+
         private readonly IEngine engine;
         private float maxTime;
 
-        public void StartSimulating(float Tarea)
-        {
-            engine.OnTemperatureChanged += Engine_OnTemperatureChanged;
-            engine.Start(Tarea);
-        }
+
 
         private void Engine_OnTemperatureChanged()
         {
             if (engine.Runtime >= maxTime)
             {
                 engine.Stop();
-                Console.WriteLine($"max temperature not reached in {maxTime}");
+                Console.WriteLine($"max temperature not reached in {maxTime} seconds");
             }
             else if (engine.Tengine >= engine.Tmax)
             {
@@ -32,6 +29,14 @@ namespace EngineSimulator.Models
             }
         }
 
+
+
+
+        public void StartSimulating(float Tarea)
+        {
+            engine.OnTemperatureChanged += Engine_OnTemperatureChanged;
+            engine.Start(Tarea);
+        }
         public void SetExperimentTime(float seconds)
         {
             maxTime = seconds;

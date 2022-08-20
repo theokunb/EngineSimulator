@@ -68,8 +68,10 @@ namespace EngineSimulator.Models
             }
         }
         public float Tmax => _Tmax;
-
         public float Runtime => elapsedTime;
+
+
+
 
         private float LinearAproximation(float x1, float x2, float y1, float y2, float x)
         {
@@ -86,6 +88,7 @@ namespace EngineSimulator.Models
             }
             return i;
         }
+
 
 
         public void Start(float Tarea)
@@ -164,7 +167,6 @@ namespace EngineSimulator.Models
                 }
             }
         }
-
         public float CalcalateVh(float m, float hm, float v, float hv)
         {
             return m * hm + MathF.Pow(v, 2) * hv;
